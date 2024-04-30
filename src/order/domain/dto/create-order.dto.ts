@@ -1,3 +1,10 @@
+export type CreateOrderItemDto = {
+  productName: string;
+  quantity: number;
+  price: number;
+};
+
 export type CreateOrderDto = {
-  name: string;
+  customerName: string;
+  orderItems: CreateOrderItemDto[];
 };
