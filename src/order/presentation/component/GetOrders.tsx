@@ -35,12 +35,11 @@ const GetOrders = () => {
                 <td>{order.customerName}</td>
                 <td>
                   <ul>
-                    {order.orderItems &&
-                      order.orderItems.map((orderItem) => (
-                        <li key={orderItem.id}>
-                          {orderItem.productName} - {orderItem.quantity}
-                        </li>
-                      ))}
+                    {order.orderItems.map((orderItem) => (
+                      <li key={orderItem.id}>
+                        {orderItem.productName} - {orderItem.quantity}
+                      </li>
+                    ))}
                   </ul>
                 </td>
               </tr>
