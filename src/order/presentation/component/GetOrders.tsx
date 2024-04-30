@@ -6,16 +6,11 @@ const GetOrders = () => {
   const { getOrderCommandHandler } = getOrderViewModel();
   const [orders, setOrders] = useState<OrderEntity[]>([]);
 
-  const handleGetOrders = async () => {
+  const useHandleGetOrders = async () => {
     const responseOrders = await getOrderCommandHandler();
-    console.log(responseOrders);
-
     setOrders(responseOrders);
   };
-
-  useEffect(() => {
-    handleGetOrders();
-  }, []);
+  useHandleGetOrders();
   return (
     <main>
       <h1>Get Orders</h1>
