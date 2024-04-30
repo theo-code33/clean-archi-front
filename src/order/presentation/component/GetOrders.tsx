@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-import { OrderEntity } from "../../domain/entity/Order.entity";
-import { getOrderViewModel } from "./GetOrderViewModel";
+import { useGetOrderViewModel } from "./GetOrderViewModel";
 
 const GetOrders = () => {
-  const { getOrderCommandHandler } = getOrderViewModel();
-  const [orders, setOrders] = useState<OrderEntity[]>([]);
+  const { orders } = useGetOrderViewModel();
 
-  const useHandleGetOrders = async () => {
-    const responseOrders = await getOrderCommandHandler();
-    setOrders(responseOrders);
-  };
-  useHandleGetOrders();
   return (
     <main>
       <h1>Get Orders</h1>
